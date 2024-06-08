@@ -3,8 +3,8 @@ import 'package:shoe_vault/ui/ui.dart';
 
 class TextStyles {
   TextStyles._();
-  static const _base = TextStyle(
-    color: Palette.dark,
+  static final _base = TextStyle(
+    color: Palette.dark.shade5,
     fontFamily: FontNames.proximaNova,
   );
 
@@ -14,7 +14,7 @@ class TextStyles {
   );
 
   static final h2 = _base.copyWith(
-    fontSize: 28.0,
+    fontSize: 36.0,
     fontWeight: FontWeight.w300,
   );
 
@@ -24,7 +24,7 @@ class TextStyles {
   );
 
   static final h4 = _base.copyWith(
-    fontSize: 18.0,
+    fontSize: 20.0,
     fontWeight: FontWeight.w400,
   );
 

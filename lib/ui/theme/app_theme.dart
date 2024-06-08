@@ -7,8 +7,8 @@ class AppTheme {
   static ThemeData get lightTheme => ThemeData(
         fontFamily: FontNames.proximaNova,
         visualDensity: VisualDensity.standard,
-        scaffoldBackgroundColor: Palette.background,
-        splashColor: Palette.dark,
+        scaffoldBackgroundColor: Palette.background.shade1,
+        splashColor: Palette.dark.shade3,
         floatingActionButtonTheme: _floatingActionButtonTheme,
         dialogTheme: _dialogTheme,
         bottomSheetTheme: _bottomSheetTheme,
@@ -23,35 +23,36 @@ class AppTheme {
       );
   static CardTheme get _cardTheme => CardTheme(
         elevation: 0.0,
-        color: Palette.light,
+        color: Palette.light.shade5,
         margin: EdgeInsets.zero,
         shape: _circularBorderRadius,
       );
 
-  static DividerThemeData get _dividerTheme => const DividerThemeData(
+  static DividerThemeData get _dividerTheme => DividerThemeData(
         space: 1.0,
         thickness: 1.0,
-        color: Palette.textDisabled,
+        color: Palette.textDisabled.shade3,
       );
 
   static InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
-        prefixIconColor: Palette.primary,
-        suffixIconColor: Palette.primary,
+        prefixIconColor: Palette.primaryDark.shade1,
+        suffixIconColor: Palette.primaryDark.shade1,
         filled: true,
         isDense: true,
         errorMaxLines: 2,
         alignLabelWithHint: true,
-        fillColor: Palette.light,
+        fillColor: Palette.light.shade4,
         contentPadding: const EdgeInsets.all(12.0),
-        border: outlinedInputBorder(Palette.textDisabled),
-        enabledBorder: outlinedInputBorder(Palette.textDisabled),
-        disabledBorder: outlinedInputBorder(Palette.textDisabled),
-        focusedBorder: outlinedInputBorder(Palette.primary),
-        errorBorder: outlinedInputBorder(Palette.error),
-        focusedErrorBorder: outlinedInputBorder(Palette.error),
-        labelStyle: TextStyles.bodyLarge.withColor(Palette.textDisabled),
-        errorStyle: TextStyles.bodySmall.withColor(Palette.error),
-        floatingLabelStyle: TextStyles.bodyRegular.withColor(Palette.primary),
+        border: outlinedInputBorder(Palette.textDisabled.shade4),
+        enabledBorder: outlinedInputBorder(Palette.textDisabled.shade5),
+        disabledBorder: outlinedInputBorder(Palette.textDisabled.shade2),
+        focusedBorder: outlinedInputBorder(Palette.primaryDark.shade3),
+        errorBorder: outlinedInputBorder(Palette.errorDark.shade3),
+        focusedErrorBorder: outlinedInputBorder(Palette.errorDark.shade3),
+        labelStyle: TextStyles.bodyLarge.withColor(Palette.textDisabled.shade4),
+        errorStyle: TextStyles.bodySmall.withColor(Palette.errorDark.shade3),
+        floatingLabelStyle:
+            TextStyles.bodyRegular.withColor(Palette.primaryDark.shade3),
       );
 
   static OutlineInputBorder outlinedInputBorder(Color color) {
@@ -66,8 +67,8 @@ class AppTheme {
         indicatorSize: TabBarIndicatorSize.tab,
         labelStyle: TextStyles.bodyRegular.semibold,
         unselectedLabelStyle: TextStyles.bodyRegular.semibold,
-        labelColor: Palette.primary,
-        unselectedLabelColor: Palette.textDisabled,
+        labelColor: Palette.primaryDark.shade3,
+        unselectedLabelColor: Palette.textDisabled.shade3,
         labelPadding: const EdgeInsets.symmetric(horizontal: 16.0),
       );
 
@@ -78,22 +79,21 @@ class AppTheme {
         ),
       );
 
-  static DialogTheme get _dialogTheme => const DialogTheme(
+  static DialogTheme get _dialogTheme => DialogTheme(
         elevation: 4.0,
-        backgroundColor: Palette.light,
-        surfaceTintColor: Palette.light,
-        shape: RoundedRectangleBorder(
+        backgroundColor: Palette.light.shade5,
+        surfaceTintColor: Palette.light.shade5,
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
       );
 
-  static BottomSheetThemeData get _bottomSheetTheme =>
-      const BottomSheetThemeData(
+  static BottomSheetThemeData get _bottomSheetTheme => BottomSheetThemeData(
         elevation: 4.0,
         clipBehavior: Clip.antiAlias,
-        backgroundColor: Palette.light,
-        surfaceTintColor: Palette.light,
-        shape: RoundedRectangleBorder(
+        backgroundColor: Palette.light.shade3,
+        surfaceTintColor: Palette.light.shade3,
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(8.0),
             topRight: Radius.circular(8.0),
@@ -111,24 +111,24 @@ class AppTheme {
           shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
           ),
-          foregroundColor: WidgetStateProperty.all(Palette.light),
+          foregroundColor: WidgetStateProperty.all(Palette.light.shade5),
           backgroundColor: WidgetStateProperty.resolveWith(
             (state) => state.contains(WidgetState.disabled)
-                ? Palette.textSecondary
-                : Palette.primary,
+                ? Palette.textSecondary.shade5
+                : Palette.primaryDark.shade1,
           ),
         ),
       );
 
   static CheckboxThemeData get _checkboxTheme => CheckboxThemeData(
         shape: _circularBorderRadius,
-        side: const BorderSide(color: Palette.textDisabled),
-        fillColor:
-            WidgetStateProperty.resolveWith((state) => Palette.textDisabled),
+        side: BorderSide(color: Palette.textDisabled.shade3),
+        fillColor: WidgetStateProperty.resolveWith(
+            (state) => Palette.textDisabled.shade3),
         checkColor: WidgetStateProperty.resolveWith(
           (state) => state.contains(WidgetState.selected)
-              ? Palette.primary
-              : Palette.textDisabled,
+              ? Palette.primaryDark.shade3
+              : Palette.textDisabled.shade3,
         ),
       );
 
@@ -143,13 +143,13 @@ class AppTheme {
         titleSpacing: 0.0,
         iconTheme: _iconTheme,
         actionsIconTheme: _iconTheme,
-        backgroundColor: Palette.light,
-        surfaceTintColor: Palette.light,
+        backgroundColor: Palette.light.shade3,
+        surfaceTintColor: Palette.light.shade3,
         titleTextStyle: TextStyles.bodyLarge.semibold,
       );
 
-  static IconThemeData get _iconTheme => const IconThemeData(
+  static IconThemeData get _iconTheme => IconThemeData(
         size: 20.0,
-        color: Palette.primary,
+        color: Palette.primaryDark.shade4,
       );
 }
