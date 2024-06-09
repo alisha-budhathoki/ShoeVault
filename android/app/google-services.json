@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "130260348394",
+    "project_id": "shoevault-55198",
+    "storage_bucket": "shoevault-55198.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130260348394:android:2e1979ac48d83f30f8d693",
+        "android_client_info": {
+          "package_name": "com.example.shoe_vault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi3wJz_eAcPepoK5dSx_n-BAZmx4r0MbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
