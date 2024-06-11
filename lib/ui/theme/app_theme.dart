@@ -124,7 +124,8 @@ class AppTheme {
         shape: _circularBorderRadius,
         side: BorderSide(color: Palette.textDisabled.shade3),
         fillColor: WidgetStateProperty.resolveWith(
-            (state) => Palette.textDisabled.shade3),
+          (state) => Palette.textDisabled.shade3,
+        ),
         checkColor: WidgetStateProperty.resolveWith(
           (state) => state.contains(WidgetState.selected)
               ? Palette.primaryDark.shade3
