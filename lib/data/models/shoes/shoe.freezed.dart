@@ -20,13 +20,14 @@ Shoe _$ShoeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Shoe {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get brand => throw _privateConstructorUsedError;
   int get reviews => throw _privateConstructorUsedError;
   int get size => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,13 +41,14 @@ abstract class $ShoeCopyWith<$Res> {
       _$ShoeCopyWithImpl<$Res, Shoe>;
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String name,
       String brand,
       int reviews,
       int size,
       String color,
       double price,
+      double rating,
       String description});
 }
 
@@ -63,20 +65,21 @@ class _$ShoeCopyWithImpl<$Res, $Val extends Shoe>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? brand = null,
     Object? reviews = null,
     Object? size = null,
     Object? color = null,
     Object? price = null,
+    Object? rating = null,
     Object? description = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -100,6 +103,10 @@ class _$ShoeCopyWithImpl<$Res, $Val extends Shoe>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
+              as double,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
               as double,
       description: null == description
           ? _value.description
@@ -117,13 +124,14 @@ abstract class _$$ShoeImplCopyWith<$Res> implements $ShoeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
+      {String? id,
       String name,
       String brand,
       int reviews,
       int size,
       String color,
       double price,
+      double rating,
       String description});
 }
 
@@ -137,20 +145,21 @@ class __$$ShoeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? brand = null,
     Object? reviews = null,
     Object? size = null,
     Object? color = null,
     Object? price = null,
+    Object? rating = null,
     Object? description = null,
   }) {
     return _then(_$ShoeImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -175,6 +184,10 @@ class __$$ShoeImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -187,20 +200,21 @@ class __$$ShoeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ShoeImpl implements _Shoe {
   const _$ShoeImpl(
-      {required this.id,
+      {this.id,
       required this.name,
       required this.brand,
       required this.reviews,
       required this.size,
       required this.color,
       required this.price,
+      required this.rating,
       required this.description});
 
   factory _$ShoeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShoeImplFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String name;
   @override
@@ -214,11 +228,13 @@ class _$ShoeImpl implements _Shoe {
   @override
   final double price;
   @override
+  final double rating;
+  @override
   final String description;
 
   @override
   String toString() {
-    return 'Shoe(id: $id, name: $name, brand: $brand, reviews: $reviews, size: $size, color: $color, price: $price, description: $description)';
+    return 'Shoe(id: $id, name: $name, brand: $brand, reviews: $reviews, size: $size, color: $color, price: $price, rating: $rating, description: $description)';
   }
 
   @override
@@ -233,14 +249,15 @@ class _$ShoeImpl implements _Shoe {
             (identical(other.size, size) || other.size == size) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.price, price) || other.price == price) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.description, description) ||
                 other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, brand, reviews, size, color, price, description);
+  int get hashCode => Object.hash(runtimeType, id, name, brand, reviews, size,
+      color, price, rating, description);
 
   @JsonKey(ignore: true)
   @override
@@ -258,19 +275,20 @@ class _$ShoeImpl implements _Shoe {
 
 abstract class _Shoe implements Shoe {
   const factory _Shoe(
-      {required final String id,
+      {final String? id,
       required final String name,
       required final String brand,
       required final int reviews,
       required final int size,
       required final String color,
       required final double price,
+      required final double rating,
       required final String description}) = _$ShoeImpl;
 
   factory _Shoe.fromJson(Map<String, dynamic> json) = _$ShoeImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get name;
   @override
@@ -283,6 +301,8 @@ abstract class _Shoe implements Shoe {
   String get color;
   @override
   double get price;
+  @override
+  double get rating;
   @override
   String get description;
   @override

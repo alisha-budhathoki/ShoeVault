@@ -8,7 +8,7 @@ class ShoeServiceImpl implements ShoeService {
   @override
   Future<List<Shoe>> fetchShoes() async {
     try {
-      final querySnapshot = await _firestore.collection('shoes').get();
+      final querySnapshot = await _firestore.collection('Shoes').get();
       return querySnapshot.docs.map((doc) {
         return Shoe.fromJson(doc.data()).copyWith(id: doc.id);
       }).toList();

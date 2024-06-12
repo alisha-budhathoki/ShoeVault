@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
       appBar: const HomeAppBar(),
       body: BlocProvider(
         create: (context) => ShoeCubit(shoeService: locator<ShoeService>()),
-        child: Center(
+        child: const Center(
           child: ShoesPage(),
         ),
       ),

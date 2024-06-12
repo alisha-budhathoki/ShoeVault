@@ -10,24 +10,25 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text('Discover'),
-      titleSpacing: 16.0,
-      actions: [
-        const SizedBox(width: 16.0),
-        _buildCartIcon(),
-      ],
-    );
-  }
-
-  Widget _buildCartIcon() {
-    return ScaleTapDetector(
-      onTap: () => {},
-      child: const ScaleAnimation(
-        child: AdaptiveIcon(
-          imageUrl: AppIcons.cart,
-          height: 30.0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: AppBar(
+        title: Text(
+          'Discover',
+          style: TextStyles.h3.bold.withColor(Palette.dark.shade5),
         ),
+        actions: [
+          IconButton(
+            icon: const AdaptiveIcon(
+              imageUrl: AppIcons.cart,
+              height: 28.0,
+            ),
+            onPressed: () {
+              // Handle cart icon tap
+            },
+          ),
+          const SizedBox(width: 16.0),
+        ],
       ),
     );
   }

@@ -45,3 +45,6 @@ flutter:
           weight: 600
         - asset: assets/fonts/ProximaNova-Bold.ttf
           weight: 700
+
+  assets:
+    - assets/icons/

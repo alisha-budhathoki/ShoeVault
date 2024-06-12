@@ -18,7 +18,7 @@ class ShoeViewModel with _$ShoeViewModel {
 
   factory ShoeViewModel.fromShoe(Shoe shoe) {
     return ShoeViewModel(
-      id: shoe.id,
+      id: shoe.id ?? '',
       name: shoe.name,
       brand: shoe.brand,
       size: shoe.size,

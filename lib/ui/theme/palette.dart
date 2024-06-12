@@ -26,11 +26,11 @@ class Palette {
 
 class DarkColor {
   const DarkColor();
-  final Color shade1 = const Color(0xFF070304); // Blue
+  final Color shade1 = const Color(0xFF070304);
   final Color shade2 = const Color(0xFF090506);
   final Color shade3 = const Color(0xFF0D0B0B);
   final Color shade4 = const Color(0xFF0D0B0B);
-  final Color shade5 = const Color(0xFF001a36);
+  final Color shade5 = const Color(0xFF000000);
 }
 
 class LightColor {

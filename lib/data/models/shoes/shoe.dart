@@ -6,13 +6,14 @@ part 'shoe.g.dart';
 @freezed
 class Shoe with _$Shoe {
   const factory Shoe({
-    required String id,
+    String? id,
     required String name,
     required String brand,
     required int reviews,
     required int size,
     required String color,
     required double price,
+    required double rating,
     required String description,
   }) = _Shoe;
 

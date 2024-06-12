@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BounceAnimation<T> extends StatefulWidget {
-  final T value;
-  final Widget child;
-  final double? begin;
-  final double? end;
-  final bool autoStart;
-  final bool Function(T)? shouldAnimate;
-
   const BounceAnimation({
     super.key,
     required this.value,
@@ -17,6 +10,13 @@ class BounceAnimation<T> extends StatefulWidget {
     this.autoStart = false,
     this.shouldAnimate,
   });
+
+  final T value;
+  final Widget child;
+  final double? begin;
+  final double? end;
+  final bool autoStart;
+  final bool Function(T)? shouldAnimate;
 
   @override
   State<BounceAnimation<T>> createState() => _BounceAnimationState();
@@ -65,7 +65,8 @@ class _BounceAnimationState<T> extends State<BounceAnimation<T>>
   void didUpdateWidget(covariant BounceAnimation<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (oldWidget.value != widget.value && (widget.shouldAnimate?.call(widget.value) ?? true)) {
+    if (oldWidget.value != widget.value &&
+        (widget.shouldAnimate?.call(widget.value) ?? true)) {
       animationController.forward();
     }
   }

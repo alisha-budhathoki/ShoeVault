@@ -3,16 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoe_vault/presentation/home/cubits/shoe_cubit.dart';
 
 class ShoesPage extends StatelessWidget {
+  const ShoesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shoes'),
+        title: const Text('Shoes'),
       ),
       body: BlocBuilder<ShoeCubit, ShoeState>(
         builder: (context, state) {
           if (state is ShoeLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is ShoeLoaded) {
             return ListView.builder(
               itemCount: state.shoes.length,
@@ -47,7 +49,7 @@ class ShoesPage extends StatelessWidget {
         onPressed: () {
           // Handle adding a new shoe
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
