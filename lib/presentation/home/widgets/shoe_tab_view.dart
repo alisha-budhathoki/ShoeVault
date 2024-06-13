@@ -25,10 +25,9 @@ class ShoeTabViewState extends State<ShoeTabView>
       padding: const EdgeInsets.all(8.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 8.0,
+        crossAxisSpacing: 12.0,
         mainAxisSpacing: 8.0,
-        childAspectRatio:
-            0.75, // Adjusted aspect ratio to provide more vertical space
+        childAspectRatio: 0.75,
       ),
       itemCount: widget.shoes.length,
       itemBuilder: (context, index) {
@@ -40,7 +39,9 @@ class ShoeTabViewState extends State<ShoeTabView>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildImage(shoe),
+              Expanded(
+                child: _buildImage(shoe),
+              ),
               _buildProductDetail(shoe),
             ],
           ),
@@ -57,49 +58,75 @@ class ShoeTabViewState extends State<ShoeTabView>
         children: [
           Text(
             shoe.name,
-            style: TextStyles.bodyText1.bold,
+            style: TextStyles.bodyText1.regular,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
           const SizedBox(height: 4.0),
+          Row(
+            children: [
+              _buildRatingStars(shoe.rating),
+              const SizedBox(width: 8.0),
+              Text(
+                '${shoe.rating}',
+                style: TextStyles.bodyText2.bold,
+              ),
+            ],
+          ),
+          const SizedBox(width: 8.0),
           Text(
-            'Rating: ${shoe.rating}',
+            '(${shoe.reviews} Reviews)',
+            style: TextStyles.bodyText2.withColor(Palette.textDisabled.shade1),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
+          const SizedBox(height: 4.0),
           Text(
             '\$${shoe.price}',
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: TextStyles.h3.regular,
+            style: TextStyles.h3.semibold,
           ),
         ],
       ),
     );
   }
 
+  Widget _buildRatingStars(double rating) {
+    final stars = List<Widget>.generate(5, (index) {
+      return Icon(
+        index < rating ? Icons.star : Icons.star_border,
+        color: Colors.yellow,
+        size: 16.0,
+      );
+    });
+    return Row(children: stars);
+  }
+
   Widget _buildImage(ShoeViewModel shoe) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(28.0),
-      child: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            child: AdaptiveImage(
-              imageUrl: shoe.brangLogo,
-              height: 20.0,
-              width: 20.0,
+      child: Container(
+        color: Palette.textDisabled.shade1,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Positioned(
+              top: 10.0,
+              left: 10.0,
+              child: AdaptiveImage(
+                imageUrl: shoe.brandLogo,
+                height: 20.0,
+                width: 20.0,
+                fit: BoxFit.fill,
+              ),
+            ),
+            const AdaptiveImage(
+              imageUrl: AppImages.shoe,
               fit: BoxFit.fill,
             ),
-          ),
-          const SizedBox(
-            height: 100.0,
-            child: AdaptiveImage(
-              imageUrl: AppImages.shoe,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

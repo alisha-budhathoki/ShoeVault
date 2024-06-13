@@ -24,8 +24,9 @@ mixin _$ShoeViewModel {
   double get price => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get productImg => throw _privateConstructorUsedError;
-  String get brangLogo => throw _privateConstructorUsedError;
+  String get brandLogo => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
+  int get reviews => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -48,8 +49,9 @@ abstract class $ShoeViewModelCopyWith<$Res> {
       double price,
       String description,
       String productImg,
-      String brangLogo,
+      String brandLogo,
       double rating,
+      int reviews,
       bool isFavorite});
 }
 
@@ -74,8 +76,9 @@ class _$ShoeViewModelCopyWithImpl<$Res, $Val extends ShoeViewModel>
     Object? price = null,
     Object? description = null,
     Object? productImg = null,
-    Object? brangLogo = null,
+    Object? brandLogo = null,
     Object? rating = null,
+    Object? reviews = null,
     Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
@@ -111,14 +114,18 @@ class _$ShoeViewModelCopyWithImpl<$Res, $Val extends ShoeViewModel>
           ? _value.productImg
           : productImg // ignore: cast_nullable_to_non_nullable
               as String,
-      brangLogo: null == brangLogo
-          ? _value.brangLogo
-          : brangLogo // ignore: cast_nullable_to_non_nullable
+      brandLogo: null == brandLogo
+          ? _value.brandLogo
+          : brandLogo // ignore: cast_nullable_to_non_nullable
               as String,
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
+      reviews: null == reviews
+          ? _value.reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
+              as int,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -144,8 +151,9 @@ abstract class _$$ShoeViewModelImplCopyWith<$Res>
       double price,
       String description,
       String productImg,
-      String brangLogo,
+      String brandLogo,
       double rating,
+      int reviews,
       bool isFavorite});
 }
 
@@ -168,8 +176,9 @@ class __$$ShoeViewModelImplCopyWithImpl<$Res>
     Object? price = null,
     Object? description = null,
     Object? productImg = null,
-    Object? brangLogo = null,
+    Object? brandLogo = null,
     Object? rating = null,
+    Object? reviews = null,
     Object? isFavorite = null,
   }) {
     return _then(_$ShoeViewModelImpl(
@@ -205,14 +214,18 @@ class __$$ShoeViewModelImplCopyWithImpl<$Res>
           ? _value.productImg
           : productImg // ignore: cast_nullable_to_non_nullable
               as String,
-      brangLogo: null == brangLogo
-          ? _value.brangLogo
-          : brangLogo // ignore: cast_nullable_to_non_nullable
+      brandLogo: null == brandLogo
+          ? _value.brandLogo
+          : brandLogo // ignore: cast_nullable_to_non_nullable
               as String,
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
+      reviews: null == reviews
+          ? _value.reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
+              as int,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -233,8 +246,9 @@ class _$ShoeViewModelImpl implements _ShoeViewModel {
       required this.price,
       required this.description,
       required this.productImg,
-      required this.brangLogo,
+      required this.brandLogo,
       required this.rating,
+      required this.reviews,
       required this.isFavorite});
 
   @override
@@ -254,15 +268,17 @@ class _$ShoeViewModelImpl implements _ShoeViewModel {
   @override
   final String productImg;
   @override
-  final String brangLogo;
+  final String brandLogo;
   @override
   final double rating;
+  @override
+  final int reviews;
   @override
   final bool isFavorite;
 
   @override
   String toString() {
-    return 'ShoeViewModel(id: $id, name: $name, brand: $brand, size: $size, color: $color, price: $price, description: $description, productImg: $productImg, brangLogo: $brangLogo, rating: $rating, isFavorite: $isFavorite)';
+    return 'ShoeViewModel(id: $id, name: $name, brand: $brand, size: $size, color: $color, price: $price, description: $description, productImg: $productImg, brandLogo: $brandLogo, rating: $rating, reviews: $reviews, isFavorite: $isFavorite)';
   }
 
   @override
@@ -280,16 +296,17 @@ class _$ShoeViewModelImpl implements _ShoeViewModel {
                 other.description == description) &&
             (identical(other.productImg, productImg) ||
                 other.productImg == productImg) &&
-            (identical(other.brangLogo, brangLogo) ||
-                other.brangLogo == brangLogo) &&
+            (identical(other.brandLogo, brandLogo) ||
+                other.brandLogo == brandLogo) &&
             (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.reviews, reviews) || other.reviews == reviews) &&
             (identical(other.isFavorite, isFavorite) ||
                 other.isFavorite == isFavorite));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, name, brand, size, color,
-      price, description, productImg, brangLogo, rating, isFavorite);
+      price, description, productImg, brandLogo, rating, reviews, isFavorite);
 
   @JsonKey(ignore: true)
   @override
@@ -308,8 +325,9 @@ abstract class _ShoeViewModel implements ShoeViewModel {
       required final double price,
       required final String description,
       required final String productImg,
-      required final String brangLogo,
+      required final String brandLogo,
       required final double rating,
+      required final int reviews,
       required final bool isFavorite}) = _$ShoeViewModelImpl;
 
   @override
@@ -329,9 +347,11 @@ abstract class _ShoeViewModel implements ShoeViewModel {
   @override
   String get productImg;
   @override
-  String get brangLogo;
+  String get brandLogo;
   @override
   double get rating;
+  @override
+  int get reviews;
   @override
   bool get isFavorite;
   @override

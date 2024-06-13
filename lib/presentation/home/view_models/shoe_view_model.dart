@@ -14,14 +14,16 @@ class ShoeViewModel with _$ShoeViewModel {
     required double price,
     required String description,
     required String productImg,
-    required String brangLogo,
+    required String brandLogo,
     required double rating,
+    required int reviews,
     required bool isFavorite,
   }) = _ShoeViewModel;
 
   factory ShoeViewModel.fromShoe(Shoe shoe) {
     return ShoeViewModel(
-      brangLogo: shoe.brandImg ?? '',
+      reviews: shoe.reviews,
+      brandLogo: shoe.brandImg ?? '',
       productImg: shoe.productImg ?? '',
       rating: shoe.rating,
       id: shoe.id ?? '',
