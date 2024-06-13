@@ -7,5 +7,6 @@ void main() async {
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  debugDisableShadows = true;
   runApp(ShoeVaultApp());
 }

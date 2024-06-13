@@ -15,7 +15,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         title: Text(
           'Discover',
-          style: TextStyles.h3.bold.withColor(Palette.dark.shade5),
+          style: TextStyles.h7.bold.withColor(Palette.dark.shade5),
         ),
         actions: [
           IconButton(

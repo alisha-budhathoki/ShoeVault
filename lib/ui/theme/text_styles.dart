@@ -8,42 +8,62 @@ class TextStyles {
     fontFamily: FontNames.proximaNova,
   );
 
-  static final h1 = _base.copyWith(
+  static final h9 = _base.copyWith(
     fontSize: 48.0,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.bold,
   );
 
-  static final h2 = _base.copyWith(
+  static final h8 = _base.copyWith(
     fontSize: 36.0,
     fontWeight: FontWeight.w300,
   );
 
-  static final h3 = _base.copyWith(
+  static final h7 = _base.copyWith(
     fontSize: 24.0,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w300,
   );
 
-  static final h4 = _base.copyWith(
+  static final h6 = _base.copyWith(
     fontSize: 20.0,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w300,
   );
 
-  static final bodyLarge = _base.copyWith(
+  static final h5 = _base.copyWith(
     fontSize: 16.0,
     fontWeight: FontWeight.w400,
   );
 
-  static final bodyRegular = _base.copyWith(
+  static final h4 = _base.copyWith(
     fontSize: 14.0,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
   );
-  static final bodySmall = _base.copyWith(
+  static final h3 = _base.copyWith(
     fontSize: 12.0,
     fontWeight: FontWeight.w300,
   );
-  static final bodyExtraSmall = _base.copyWith(
+
+  static final h2 = _base.copyWith(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w300,
+  );
+
+  static final h1 = _base.copyWith(
     fontSize: 10.0,
-    fontWeight: FontWeight.w200,
+    fontWeight: FontWeight.w300,
+  );
+
+  static final bodyText3 = _base.copyWith(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final bodyText2 = _base.copyWith(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500,
+  );
+  static final bodyText1 = _base.copyWith(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w300,
   );
 
   static TextStyle withFontSize(double fontSize) =>

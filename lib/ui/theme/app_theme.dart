@@ -6,9 +6,10 @@ class AppTheme {
 
   static ThemeData get lightTheme => ThemeData(
         fontFamily: FontNames.proximaNova,
+        highlightColor: Palette.transparent,
         visualDensity: VisualDensity.standard,
-        scaffoldBackgroundColor: Palette.background.shade1,
-        splashColor: Palette.dark.shade3,
+        scaffoldBackgroundColor: Palette.light.shade4,
+        splashColor: Palette.transparent,
         floatingActionButtonTheme: _floatingActionButtonTheme,
         dialogTheme: _dialogTheme,
         bottomSheetTheme: _bottomSheetTheme,
@@ -49,10 +50,10 @@ class AppTheme {
         focusedBorder: outlinedInputBorder(Palette.primaryDark.shade3),
         errorBorder: outlinedInputBorder(Palette.errorDark.shade3),
         focusedErrorBorder: outlinedInputBorder(Palette.errorDark.shade3),
-        labelStyle: TextStyles.bodyLarge.withColor(Palette.textDisabled.shade4),
-        errorStyle: TextStyles.bodySmall.withColor(Palette.errorDark.shade3),
+        labelStyle: TextStyles.bodyText3.withColor(Palette.textDisabled.shade4),
+        errorStyle: TextStyles.bodyText1.withColor(Palette.errorDark.shade3),
         floatingLabelStyle:
-            TextStyles.bodyRegular.withColor(Palette.primaryDark.shade3),
+            TextStyles.bodyText2.withColor(Palette.primaryDark.shade3),
       );
 
   static OutlineInputBorder outlinedInputBorder(Color color) {
@@ -65,8 +66,8 @@ class AppTheme {
   static TabBarTheme get _tabBarTheme => TabBarTheme(
         dividerHeight: 0.0,
         indicatorSize: TabBarIndicatorSize.tab,
-        labelStyle: TextStyles.bodyRegular.semibold,
-        unselectedLabelStyle: TextStyles.bodyRegular.semibold,
+        labelStyle: TextStyles.bodyText2.semibold,
+        unselectedLabelStyle: TextStyles.bodyText2.semibold,
         labelColor: Palette.primaryDark.shade3,
         unselectedLabelColor: Palette.textDisabled.shade3,
         labelPadding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -144,9 +145,9 @@ class AppTheme {
         titleSpacing: 0.0,
         iconTheme: _iconTheme,
         actionsIconTheme: _iconTheme,
-        backgroundColor: Palette.light.shade3,
+        backgroundColor: Palette.light.shade4,
         surfaceTintColor: Palette.light.shade3,
-        titleTextStyle: TextStyles.bodyLarge.semibold,
+        titleTextStyle: TextStyles.bodyText3.semibold,
       );
 
   static IconThemeData get _iconTheme => IconThemeData(

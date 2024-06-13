@@ -29,6 +29,8 @@ mixin _$Shoe {
   double get price => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String? get productImg => throw _privateConstructorUsedError;
+  String? get brandImg => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +51,9 @@ abstract class $ShoeCopyWith<$Res> {
       String color,
       double price,
       double rating,
-      String description});
+      String description,
+      String? productImg,
+      String? brandImg});
 }
 
 /// @nodoc
@@ -74,6 +78,8 @@ class _$ShoeCopyWithImpl<$Res, $Val extends Shoe>
     Object? price = null,
     Object? rating = null,
     Object? description = null,
+    Object? productImg = freezed,
+    Object? brandImg = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -112,6 +118,14 @@ class _$ShoeCopyWithImpl<$Res, $Val extends Shoe>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      productImg: freezed == productImg
+          ? _value.productImg
+          : productImg // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brandImg: freezed == brandImg
+          ? _value.brandImg
+          : brandImg // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -132,7 +146,9 @@ abstract class _$$ShoeImplCopyWith<$Res> implements $ShoeCopyWith<$Res> {
       String color,
       double price,
       double rating,
-      String description});
+      String description,
+      String? productImg,
+      String? brandImg});
 }
 
 /// @nodoc
@@ -154,6 +170,8 @@ class __$$ShoeImplCopyWithImpl<$Res>
     Object? price = null,
     Object? rating = null,
     Object? description = null,
+    Object? productImg = freezed,
+    Object? brandImg = freezed,
   }) {
     return _then(_$ShoeImpl(
       id: freezed == id
@@ -192,6 +210,14 @@ class __$$ShoeImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      productImg: freezed == productImg
+          ? _value.productImg
+          : productImg // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brandImg: freezed == brandImg
+          ? _value.brandImg
+          : brandImg // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -208,7 +234,9 @@ class _$ShoeImpl implements _Shoe {
       required this.color,
       required this.price,
       required this.rating,
-      required this.description});
+      required this.description,
+      this.productImg,
+      this.brandImg});
 
   factory _$ShoeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShoeImplFromJson(json);
@@ -231,10 +259,14 @@ class _$ShoeImpl implements _Shoe {
   final double rating;
   @override
   final String description;
+  @override
+  final String? productImg;
+  @override
+  final String? brandImg;
 
   @override
   String toString() {
-    return 'Shoe(id: $id, name: $name, brand: $brand, reviews: $reviews, size: $size, color: $color, price: $price, rating: $rating, description: $description)';
+    return 'Shoe(id: $id, name: $name, brand: $brand, reviews: $reviews, size: $size, color: $color, price: $price, rating: $rating, description: $description, productImg: $productImg, brandImg: $brandImg)';
   }
 
   @override
@@ -251,13 +283,17 @@ class _$ShoeImpl implements _Shoe {
             (identical(other.price, price) || other.price == price) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.productImg, productImg) ||
+                other.productImg == productImg) &&
+            (identical(other.brandImg, brandImg) ||
+                other.brandImg == brandImg));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, brand, reviews, size,
-      color, price, rating, description);
+      color, price, rating, description, productImg, brandImg);
 
   @JsonKey(ignore: true)
   @override
@@ -283,7 +319,9 @@ abstract class _Shoe implements Shoe {
       required final String color,
       required final double price,
       required final double rating,
-      required final String description}) = _$ShoeImpl;
+      required final String description,
+      final String? productImg,
+      final String? brandImg}) = _$ShoeImpl;
 
   factory _Shoe.fromJson(Map<String, dynamic> json) = _$ShoeImpl.fromJson;
 
@@ -305,6 +343,10 @@ abstract class _Shoe implements Shoe {
   double get rating;
   @override
   String get description;
+  @override
+  String? get productImg;
+  @override
+  String? get brandImg;
   @override
   @JsonKey(ignore: true)
   _$$ShoeImplCopyWith<_$ShoeImpl> get copyWith =>

@@ -4,6 +4,7 @@ class Palette {
   Palette._();
   static const LightColor light = LightColor();
   static const DarkColor dark = DarkColor();
+  static const transparent = Colors.transparent;
 
   static const PrimaryDarkColor primaryDark = PrimaryDarkColor();
   static const PrimaryLightColor primaryLight = PrimaryLightColor();

@@ -123,15 +123,15 @@ enum ButtonState { regular, focused, disabled }
 Map<ButtonSize, ButtonProperties> buttonProperties = {
   ButtonSize.large: ButtonProperties(
     padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-    textStyle: TextStyles.bodyLarge.regular,
+    textStyle: TextStyles.bodyText3.regular,
   ),
   ButtonSize.medium: ButtonProperties(
     padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
-    textStyle: TextStyles.bodyRegular.regular,
+    textStyle: TextStyles.bodyText2.regular,
   ),
   ButtonSize.small: ButtonProperties(
     padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-    textStyle: TextStyles.bodyRegular.regular,
+    textStyle: TextStyles.bodyText2.regular,
   ),
 };
 

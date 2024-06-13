@@ -79,7 +79,7 @@ class ImageIndicator extends StatelessWidget {
       child: Text(
         description,
         textAlign: TextAlign.center,
-        style: TextStyles.bodyRegular,
+        style: TextStyles.bodyText2,
       ),
     );
   }
