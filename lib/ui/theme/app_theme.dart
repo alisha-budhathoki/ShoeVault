@@ -152,6 +152,6 @@ class AppTheme {
 
   static IconThemeData get _iconTheme => IconThemeData(
         size: 20.0,
-        color: Palette.primaryDark.shade4,
+        color: Palette.dark.shade5,
       );
 }

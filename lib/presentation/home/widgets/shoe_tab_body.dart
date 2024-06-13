@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shoe_vault/core/constants/constants_index.dart';
+import 'package:shoe_vault/core/routing/routing_index.dart';
 import 'package:shoe_vault/presentation/home/view_models/shoe_view_model.dart';
 import 'package:shoe_vault/ui/ui.dart';
 
-class ShoeTabView extends StatefulWidget {
-  const ShoeTabView({super.key, required this.shoes});
+class ShoeTabBody extends StatefulWidget {
+  const ShoeTabBody({super.key, required this.shoes});
 
   final List<ShoeViewModel> shoes;
 
   @override
-  ShoeTabViewState createState() => ShoeTabViewState();
+  ShoeTabBodyState createState() => ShoeTabBodyState();
 }
 
-class ShoeTabViewState extends State<ShoeTabView>
+class ShoeTabBodyState extends State<ShoeTabBody>
     with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
@@ -33,9 +35,7 @@ class ShoeTabViewState extends State<ShoeTabView>
       itemBuilder: (context, index) {
         final shoe = widget.shoes[index];
         return InkWell(
-          onTap: () {
-            // Handle shoe tap
-          },
+          onTap: () => context.push(Routes.shoeDetail, extra: shoe.id),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

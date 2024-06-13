@@ -1,20 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'shoes_response.dart';
+part of 'shoe_list_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShoesResponseImpl _$$ShoesResponseImplFromJson(Map<String, dynamic> json) =>
-    _$ShoesResponseImpl(
+_$ShoeListResponseImpl _$$ShoeListResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ShoeListResponseImpl(
       shoes: (json['shoes'] as List<dynamic>)
-          .map((e) => Shoe.fromJson(e as Map<String, dynamic>))
+          .map((e) => ShoeResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageToken: json['nextPageToken'] as String?,
     );
 
-Map<String, dynamic> _$$ShoesResponseImplToJson(_$ShoesResponseImpl instance) =>
+Map<String, dynamic> _$$ShoeListResponseImplToJson(
+        _$ShoeListResponseImpl instance) =>
     <String, dynamic>{
       'shoes': instance.shoes,
       'nextPageToken': instance.nextPageToken,

@@ -1,5 +1,6 @@
-import 'package:shoe_vault/data/models/shoes/shoe.dart';
+import 'package:shoe_vault/data/models/shoes/shoe_response.dart';
 
 abstract class ShoeService {
-  Future<List<Shoe>> fetchShoes();
+  Future<List<ShoeResponse>> fetchShoes();
+  Future<ShoeResponse?> fetchShoeById(String id);
 }

@@ -46,7 +46,7 @@ class ShoesPage extends StatelessWidget {
                           ? shoes
                           : shoes.where((shoe) => shoe.brand == brand).toList();
 
-                      return ShoeTabView(shoes: filteredShoes);
+                      return ShoeTabBody(shoes: filteredShoes);
                     }).toList(),
                   ),
                 ),

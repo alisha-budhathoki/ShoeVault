@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shoe_vault/presentation/error_screen.dart';
 import 'package:shoe_vault/presentation/home/home_view.dart';
 import 'package:shoe_vault/presentation/second_screen.dart';
+import 'package:shoe_vault/presentation/shoe_detail/shoe_detail_view.dart';
 
 class AppRouter {
   AppRouter()
@@ -14,6 +15,13 @@ class AppRouter {
             GoRoute(
               path: '/secondScreen',
               builder: (context, state) => const SecondScreen(),
+            ),
+            GoRoute(
+              path: '/shoeDetail',
+              builder: (context, state) {
+                final shoeId = state.extra! as String;
+                return ShoeDetailView(shoeId: shoeId);
+              },
             ),
           ],
           errorBuilder: (context, state) => ErrorScreen(
