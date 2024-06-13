@@ -23,16 +23,5 @@ class ShoeCubit extends Cubit<ShoeState> {
     }
   }
 
-  Future<void> toggleFavorite(String shoeId) async {
-    //   if (state is ShoeLoaded) {
-    //     final loadedState = state as ShoeLoaded;
-    //     final updatedShoes = loadedState.shoes.map((shoe) {
-    //       if (shoe.id == shoeId) {
-    //         return shoe.copyWith(isFavorite: !shoe.isFavorite);
-    //       }
-    //       return shoe;
-    //     }).toList();
-    //     emit(ShoeState.loaded(updatedShoes));
-    //   }
-  }
+  Future<void> toggleFavorite(String shoeId) async {}
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoe_vault/core/constants/constants_index.dart';
 import 'package:shoe_vault/presentation/home/view_models/shoe_view_model.dart';
 import 'package:shoe_vault/ui/ui.dart';
 
@@ -92,10 +93,10 @@ class ShoeTabViewState extends State<ShoeTabView>
               fit: BoxFit.fill,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 100.0,
             child: AdaptiveImage(
-              imageUrl: shoe.productImg,
+              imageUrl: AppImages.shoe,
             ),
           ),
         ],

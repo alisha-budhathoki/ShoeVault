@@ -2,16 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shoe_vault/ui/ui.dart';
 
 class CustomCard extends StatelessWidget {
-  final Widget child;
-  final double elevation;
-  final double borderRadius;
-  final Color? color;
-  final Color? borderColor;
-  final EdgeInsetsGeometry? margin;
-  final EdgeInsetsGeometry? padding;
-  final double borderWidth;
-  final bool hideDecoration;
-
   const CustomCard({
     super.key,
     required this.child,
@@ -24,6 +14,16 @@ class CustomCard extends StatelessWidget {
     this.borderWidth = 1.0,
     this.hideDecoration = false,
   });
+
+  final Widget child;
+  final double elevation;
+  final double borderRadius;
+  final Color? color;
+  final Color? borderColor;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
+  final double borderWidth;
+  final bool hideDecoration;
 
   @override
   Widget build(BuildContext context) {
