@@ -28,6 +28,7 @@ mixin _$ShoeDetailVM {
   List<String> get colors => throw _privateConstructorUsedError;
   String get genderType => throw _privateConstructorUsedError;
   List<ReviewVM> get reviews => throw _privateConstructorUsedError;
+  String? get selectedColor => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ShoeDetailVMCopyWith<ShoeDetailVM> get copyWith =>
@@ -52,7 +53,8 @@ abstract class $ShoeDetailVMCopyWith<$Res> {
       List<String> productImages,
       List<String> colors,
       String genderType,
-      List<ReviewVM> reviews});
+      List<ReviewVM> reviews,
+      String? selectedColor});
 }
 
 /// @nodoc
@@ -80,6 +82,7 @@ class _$ShoeDetailVMCopyWithImpl<$Res, $Val extends ShoeDetailVM>
     Object? colors = null,
     Object? genderType = null,
     Object? reviews = null,
+    Object? selectedColor = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -130,6 +133,10 @@ class _$ShoeDetailVMCopyWithImpl<$Res, $Val extends ShoeDetailVM>
           ? _value.reviews
           : reviews // ignore: cast_nullable_to_non_nullable
               as List<ReviewVM>,
+      selectedColor: freezed == selectedColor
+          ? _value.selectedColor
+          : selectedColor // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -154,7 +161,8 @@ abstract class _$$ShoeDetailVMImplCopyWith<$Res>
       List<String> productImages,
       List<String> colors,
       String genderType,
-      List<ReviewVM> reviews});
+      List<ReviewVM> reviews,
+      String? selectedColor});
 }
 
 /// @nodoc
@@ -180,6 +188,7 @@ class __$$ShoeDetailVMImplCopyWithImpl<$Res>
     Object? colors = null,
     Object? genderType = null,
     Object? reviews = null,
+    Object? selectedColor = freezed,
   }) {
     return _then(_$ShoeDetailVMImpl(
       id: null == id
@@ -230,6 +239,10 @@ class __$$ShoeDetailVMImplCopyWithImpl<$Res>
           ? _value._reviews
           : reviews // ignore: cast_nullable_to_non_nullable
               as List<ReviewVM>,
+      selectedColor: freezed == selectedColor
+          ? _value.selectedColor
+          : selectedColor // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -249,7 +262,8 @@ class _$ShoeDetailVMImpl implements _ShoeDetailVM {
       required final List<String> productImages,
       required final List<String> colors,
       required this.genderType,
-      required final List<ReviewVM> reviews})
+      required final List<ReviewVM> reviews,
+      this.selectedColor})
       : _sizes = sizes,
         _productImages = productImages,
         _colors = colors,
@@ -304,8 +318,11 @@ class _$ShoeDetailVMImpl implements _ShoeDetailVM {
   }
 
   @override
+  final String? selectedColor;
+
+  @override
   String toString() {
-    return 'ShoeDetailVM(id: $id, name: $name, brand: $brand, description: $description, price: $price, brandImg: $brandImg, rating: $rating, sizes: $sizes, productImages: $productImages, colors: $colors, genderType: $genderType, reviews: $reviews)';
+    return 'ShoeDetailVM(id: $id, name: $name, brand: $brand, description: $description, price: $price, brandImg: $brandImg, rating: $rating, sizes: $sizes, productImages: $productImages, colors: $colors, genderType: $genderType, reviews: $reviews, selectedColor: $selectedColor)';
   }
 
   @override
@@ -328,7 +345,9 @@ class _$ShoeDetailVMImpl implements _ShoeDetailVM {
             const DeepCollectionEquality().equals(other._colors, _colors) &&
             (identical(other.genderType, genderType) ||
                 other.genderType == genderType) &&
-            const DeepCollectionEquality().equals(other._reviews, _reviews));
+            const DeepCollectionEquality().equals(other._reviews, _reviews) &&
+            (identical(other.selectedColor, selectedColor) ||
+                other.selectedColor == selectedColor));
   }
 
   @override
@@ -345,7 +364,8 @@ class _$ShoeDetailVMImpl implements _ShoeDetailVM {
       const DeepCollectionEquality().hash(_productImages),
       const DeepCollectionEquality().hash(_colors),
       genderType,
-      const DeepCollectionEquality().hash(_reviews));
+      const DeepCollectionEquality().hash(_reviews),
+      selectedColor);
 
   @JsonKey(ignore: true)
   @override
@@ -367,7 +387,8 @@ abstract class _ShoeDetailVM implements ShoeDetailVM {
       required final List<String> productImages,
       required final List<String> colors,
       required final String genderType,
-      required final List<ReviewVM> reviews}) = _$ShoeDetailVMImpl;
+      required final List<ReviewVM> reviews,
+      final String? selectedColor}) = _$ShoeDetailVMImpl;
 
   @override
   String get id;
@@ -393,6 +414,8 @@ abstract class _ShoeDetailVM implements ShoeDetailVM {
   String get genderType;
   @override
   List<ReviewVM> get reviews;
+  @override
+  String? get selectedColor;
   @override
   @JsonKey(ignore: true)
   _$$ShoeDetailVMImplCopyWith<_$ShoeDetailVMImpl> get copyWith =>

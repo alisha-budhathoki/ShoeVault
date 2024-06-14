@@ -21,7 +21,7 @@ mixin _$ShoeDetailState {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String message) error,
-    required TResult Function(ShoeResponse shoes) loaded,
+    required TResult Function(ShoeDetailVM shoe) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$ShoeDetailState {
     TResult? Function()? loading,
     TResult? Function()? empty,
     TResult? Function(String message)? error,
-    TResult? Function(ShoeResponse shoes)? loaded,
+    TResult? Function(ShoeDetailVM shoe)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$ShoeDetailState {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String message)? error,
-    TResult Function(ShoeResponse shoes)? loaded,
+    TResult Function(ShoeDetailVM shoe)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$ShoeDetailLoadingImpl implements ShoeDetailLoading {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String message) error,
-    required TResult Function(ShoeResponse shoes) loaded,
+    required TResult Function(ShoeDetailVM shoe) loaded,
   }) {
     return loading();
   }
@@ -138,7 +138,7 @@ class _$ShoeDetailLoadingImpl implements ShoeDetailLoading {
     TResult? Function()? loading,
     TResult? Function()? empty,
     TResult? Function(String message)? error,
-    TResult? Function(ShoeResponse shoes)? loaded,
+    TResult? Function(ShoeDetailVM shoe)? loaded,
   }) {
     return loading?.call();
   }
@@ -149,7 +149,7 @@ class _$ShoeDetailLoadingImpl implements ShoeDetailLoading {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String message)? error,
-    TResult Function(ShoeResponse shoes)? loaded,
+    TResult Function(ShoeDetailVM shoe)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -241,7 +241,7 @@ class _$ShoeDetailEmptyImpl implements ShoeDetailEmpty {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String message) error,
-    required TResult Function(ShoeResponse shoes) loaded,
+    required TResult Function(ShoeDetailVM shoe) loaded,
   }) {
     return empty();
   }
@@ -252,7 +252,7 @@ class _$ShoeDetailEmptyImpl implements ShoeDetailEmpty {
     TResult? Function()? loading,
     TResult? Function()? empty,
     TResult? Function(String message)? error,
-    TResult? Function(ShoeResponse shoes)? loaded,
+    TResult? Function(ShoeDetailVM shoe)? loaded,
   }) {
     return empty?.call();
   }
@@ -263,7 +263,7 @@ class _$ShoeDetailEmptyImpl implements ShoeDetailEmpty {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String message)? error,
-    TResult Function(ShoeResponse shoes)? loaded,
+    TResult Function(ShoeDetailVM shoe)? loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -382,7 +382,7 @@ class _$ShoeDetailErrorImpl implements ShoeDetailError {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String message) error,
-    required TResult Function(ShoeResponse shoes) loaded,
+    required TResult Function(ShoeDetailVM shoe) loaded,
   }) {
     return error(message);
   }
@@ -393,7 +393,7 @@ class _$ShoeDetailErrorImpl implements ShoeDetailError {
     TResult? Function()? loading,
     TResult? Function()? empty,
     TResult? Function(String message)? error,
-    TResult? Function(ShoeResponse shoes)? loaded,
+    TResult? Function(ShoeDetailVM shoe)? loaded,
   }) {
     return error?.call(message);
   }
@@ -404,7 +404,7 @@ class _$ShoeDetailErrorImpl implements ShoeDetailError {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String message)? error,
-    TResult Function(ShoeResponse shoes)? loaded,
+    TResult Function(ShoeDetailVM shoe)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -467,9 +467,9 @@ abstract class _$$ShoeDetailLoadedImplCopyWith<$Res> {
           $Res Function(_$ShoeDetailLoadedImpl) then) =
       __$$ShoeDetailLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ShoeResponse shoes});
+  $Res call({ShoeDetailVM shoe});
 
-  $ShoeResponseCopyWith<$Res> get shoes;
+  $ShoeDetailVMCopyWith<$Res> get shoe;
 }
 
 /// @nodoc
@@ -483,21 +483,21 @@ class __$$ShoeDetailLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? shoes = null,
+    Object? shoe = null,
   }) {
     return _then(_$ShoeDetailLoadedImpl(
-      shoes: null == shoes
-          ? _value.shoes
-          : shoes // ignore: cast_nullable_to_non_nullable
-              as ShoeResponse,
+      shoe: null == shoe
+          ? _value.shoe
+          : shoe // ignore: cast_nullable_to_non_nullable
+              as ShoeDetailVM,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ShoeResponseCopyWith<$Res> get shoes {
-    return $ShoeResponseCopyWith<$Res>(_value.shoes, (value) {
-      return _then(_value.copyWith(shoes: value));
+  $ShoeDetailVMCopyWith<$Res> get shoe {
+    return $ShoeDetailVMCopyWith<$Res>(_value.shoe, (value) {
+      return _then(_value.copyWith(shoe: value));
     });
   }
 }
@@ -505,14 +505,14 @@ class __$$ShoeDetailLoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
-  const _$ShoeDetailLoadedImpl({required this.shoes});
+  const _$ShoeDetailLoadedImpl({required this.shoe});
 
   @override
-  final ShoeResponse shoes;
+  final ShoeDetailVM shoe;
 
   @override
   String toString() {
-    return 'ShoeDetailState.loaded(shoes: $shoes)';
+    return 'ShoeDetailState.loaded(shoe: $shoe)';
   }
 
   @override
@@ -520,11 +520,11 @@ class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ShoeDetailLoadedImpl &&
-            (identical(other.shoes, shoes) || other.shoes == shoes));
+            (identical(other.shoe, shoe) || other.shoe == shoe));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, shoes);
+  int get hashCode => Object.hash(runtimeType, shoe);
 
   @JsonKey(ignore: true)
   @override
@@ -539,9 +539,9 @@ class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String message) error,
-    required TResult Function(ShoeResponse shoes) loaded,
+    required TResult Function(ShoeDetailVM shoe) loaded,
   }) {
-    return loaded(shoes);
+    return loaded(shoe);
   }
 
   @override
@@ -550,9 +550,9 @@ class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
     TResult? Function()? loading,
     TResult? Function()? empty,
     TResult? Function(String message)? error,
-    TResult? Function(ShoeResponse shoes)? loaded,
+    TResult? Function(ShoeDetailVM shoe)? loaded,
   }) {
-    return loaded?.call(shoes);
+    return loaded?.call(shoe);
   }
 
   @override
@@ -561,11 +561,11 @@ class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String message)? error,
-    TResult Function(ShoeResponse shoes)? loaded,
+    TResult Function(ShoeDetailVM shoe)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(shoes);
+      return loaded(shoe);
     }
     return orElse();
   }
@@ -609,10 +609,10 @@ class _$ShoeDetailLoadedImpl implements ShoeDetailLoaded {
 }
 
 abstract class ShoeDetailLoaded implements ShoeDetailState {
-  const factory ShoeDetailLoaded({required final ShoeResponse shoes}) =
+  const factory ShoeDetailLoaded({required final ShoeDetailVM shoe}) =
       _$ShoeDetailLoadedImpl;
 
-  ShoeResponse get shoes;
+  ShoeDetailVM get shoe;
   @JsonKey(ignore: true)
   _$$ShoeDetailLoadedImplCopyWith<_$ShoeDetailLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

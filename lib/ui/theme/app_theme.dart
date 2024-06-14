@@ -8,7 +8,7 @@ class AppTheme {
         fontFamily: FontNames.proximaNova,
         highlightColor: Palette.transparent,
         visualDensity: VisualDensity.standard,
-        scaffoldBackgroundColor: Palette.light.shade4,
+        scaffoldBackgroundColor: Palette.light.shade5,
         splashColor: Palette.transparent,
         floatingActionButtonTheme: _floatingActionButtonTheme,
         dialogTheme: _dialogTheme,
@@ -107,7 +107,7 @@ class AppTheme {
         style: ButtonStyle(
           elevation: WidgetStateProperty.all(0.0),
           padding: WidgetStateProperty.all(
-            const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
+            const EdgeInsets.symmetric(horizontal: 32.0, vertical: 10.0),
           ),
           shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
@@ -145,7 +145,7 @@ class AppTheme {
         titleSpacing: 0.0,
         iconTheme: _iconTheme,
         actionsIconTheme: _iconTheme,
-        backgroundColor: Palette.light.shade4,
+        backgroundColor: Palette.light.shade5,
         surfaceTintColor: Palette.light.shade3,
         titleTextStyle: TextStyles.bodyText3.semibold,
       );

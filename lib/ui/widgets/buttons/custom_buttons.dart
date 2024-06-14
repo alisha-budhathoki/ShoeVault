@@ -152,49 +152,49 @@ Map<ButtonType, Map<ButtonState, Color>> textColors = {
     ButtonState.disabled: Palette.light.shade5,
   },
   ButtonType.secondary: {
-    ButtonState.regular: Palette.primaryDark.shade3,
-    ButtonState.focused: Palette.primaryDark.shade3,
+    ButtonState.regular: Palette.dark.shade3,
+    ButtonState.focused: Palette.dark.shade3,
     ButtonState.disabled: Palette.textDisabled.shade3,
   },
   ButtonType.ghost: {
-    ButtonState.regular: Palette.primaryDark.shade3,
-    ButtonState.focused: Palette.primaryDark.shade3,
+    ButtonState.regular: Palette.dark.shade3,
+    ButtonState.focused: Palette.dark.shade3,
     ButtonState.disabled: Palette.textDisabled.shade3,
   },
 };
 
 Map<ButtonType, Map<ButtonState, Color>> backgroundColors = {
   ButtonType.primary: {
-    ButtonState.regular: Palette.primaryDark.shade3,
-    ButtonState.focused: Palette.primaryDark.shade3,
+    ButtonState.regular: Palette.dark.shade3,
+    ButtonState.focused: Palette.dark.shade3,
     ButtonState.disabled: Palette.textDisabled.shade3,
   },
   ButtonType.secondary: {
-    ButtonState.regular: Colors.transparent,
-    ButtonState.focused: Palette.primaryDark.shade1.withOpacity(0.5),
-    ButtonState.disabled: Colors.transparent,
+    ButtonState.regular: Palette.transparent,
+    ButtonState.focused: Palette.dark.shade1.withOpacity(0.5),
+    ButtonState.disabled: Palette.transparent,
   },
   ButtonType.ghost: {
-    ButtonState.regular: Colors.transparent,
+    ButtonState.regular: Palette.transparent,
     ButtonState.focused: Palette.primaryDark.shade1.withOpacity(0.5),
-    ButtonState.disabled: Colors.transparent,
+    ButtonState.disabled: Palette.transparent,
   },
 };
 
 Map<ButtonType, Map<ButtonState, Color>> borderColors = {
   ButtonType.primary: {
-    ButtonState.regular: Palette.primaryDark.shade3,
-    ButtonState.focused: Palette.primaryDark.shade3,
+    ButtonState.regular: Palette.dark.shade3,
+    ButtonState.focused: Palette.dark.shade3,
     ButtonState.disabled: Palette.textDisabled.shade3,
   },
   ButtonType.secondary: {
-    ButtonState.regular: Palette.primaryDark.shade3,
-    ButtonState.focused: Palette.primaryDark.shade3,
+    ButtonState.regular: Palette.dark.shade3,
+    ButtonState.focused: Palette.dark.shade3,
     ButtonState.disabled: Palette.textDisabled.shade3,
   },
   ButtonType.ghost: {
-    ButtonState.regular: Colors.transparent,
-    ButtonState.focused: Colors.transparent,
-    ButtonState.disabled: Colors.transparent,
+    ButtonState.regular: Palette.transparent,
+    ButtonState.focused: Palette.transparent,
+    ButtonState.disabled: Palette.transparent,
   },
 };

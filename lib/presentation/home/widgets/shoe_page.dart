@@ -25,7 +25,7 @@ class ShoesPage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  color: Palette.light.shade4,
+                  color: Palette.light.shade5,
                   child: TabBar(
                     indicatorColor: Colors.transparent,
                     labelColor: Palette.dark.shade5,

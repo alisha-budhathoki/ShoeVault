@@ -8,6 +8,6 @@ class ShoeDetailState with _$ShoeDetailState {
     required String message,
   }) = ShoeDetailError;
   const factory ShoeDetailState.loaded({
-    required ShoeResponse shoes,
+    required ShoeDetailVM shoe,
   }) = ShoeDetailLoaded;
 }

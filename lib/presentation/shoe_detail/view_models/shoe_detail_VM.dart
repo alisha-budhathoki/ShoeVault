@@ -19,6 +19,7 @@ class ShoeDetailVM with _$ShoeDetailVM {
     required List<String> colors,
     required String genderType,
     required List<ReviewVM> reviews,
+    String? selectedColor,
   }) = _ShoeDetailVM;
 
   factory ShoeDetailVM.fromShoe(ShoeResponse shoe) {
